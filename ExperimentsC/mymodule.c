@@ -24,7 +24,8 @@ int file_size(char* file) {
     return -1;
 }
 
-char* fullpath(char* file1, char* file2) {
-    printf("Success here too");
+char (*fullpath(char* file1, char* file2)) {
+    char *some = "this";
+    return some;
 }
 
