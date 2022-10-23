@@ -7,4 +7,6 @@ char (*fullpath(char* file1, char* file2));
 
 int is_dir(char *folder);
 
+int get_size(char *foldername);
+
 #endif // MY_MODULE
