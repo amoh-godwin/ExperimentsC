@@ -12,10 +12,9 @@ int main() {
     DIR *dr;
     struct dirent *d;
     char *folder_name;
+    char *ff;
     int size;
 
-    /*char name[] = "love";
-    char two[] = "..";
     /*strcat(two, "love");
 
     printf("%s", two);
@@ -28,8 +27,13 @@ int main() {
 
     printf("Print size is: %d", size);*/
 
-    printf("Which folder would you like to scan?: ");
+    fullpath("love", "always");
+    //printf("success is: %s \n", ff);
+
+    printf("Which folder would you like to scan?: \n");
     scanf("%s", folder_name);
+
+    printf("done\n");
 
     dr = opendir(folder_name);
 
