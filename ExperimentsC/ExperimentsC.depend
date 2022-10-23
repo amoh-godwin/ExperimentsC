@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1666559113 source:d:\github\experimentsc\experimentsc\listfiles.c
+	<stdio.h>
+	<conio.h>
+	<dirent.h>
+	<string.h>
+	<stdlib.h>
+	"mymodule.h"
+
+1666549547 d:\github\experimentsc\experimentsc\mymodule.h
+
+1666552494 source:d:\github\experimentsc\experimentsc\mymodule.c
+	<stdio.h>
+	<stdlib.h>
+
