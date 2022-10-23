@@ -13,7 +13,6 @@ int main() {
     struct dirent *d;
     char *folder_name;
     char *ff;
-    int size;
 
     /*strcat(two, "love");
 
@@ -27,11 +26,11 @@ int main() {
 
     printf("Print size is: %d", size);*/
 
-    fullpath("love", "always");
-    //printf("success is: %s \n", ff);
+    ff = fullpath("love", "always");
+    printf("success is: %s \n", ff);
 
     printf("Which folder would you like to scan?: \n");
-    scanf("%s", folder_name);
+    scanf("%s", &folder_name);
 
     printf("done\n");
 
