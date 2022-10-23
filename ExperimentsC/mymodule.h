@@ -3,6 +3,6 @@
 
 int file_size(char* file);
 
-char* fullpath(char* file1, char* file2);
+char (*fullpath(char* file1, char* file2));
 
 #endif // MY_MODULE
