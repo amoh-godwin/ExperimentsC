@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <dirent.h>
 
+int total_size = 0;
+
 int file_size(char* file) {
     int size;
     FILE* fh;
@@ -46,5 +48,9 @@ int is_dir(char *folder) {
     } else {
         return 1;
     }
+}
+
+int get_size(char *foldername) {
+    //
 }
 
