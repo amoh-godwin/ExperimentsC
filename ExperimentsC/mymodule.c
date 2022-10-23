@@ -24,8 +24,15 @@ int file_size(char* file) {
     return -1;
 }
 
-char (*fullpath(char* file1, char* file2)) {
-    char *some = "this";
-    return some;
+char (*fullpath(char *file1, char *file2)) {
+    char fullstr[1000];
+    char (*outp)[1000];
+
+    sprintf(fullstr, "%s/%s", file1, file2);
+    printf("this: %s", fullstr);
+
+    outp = &fullstr;
+
+    return outp;
 }
 
