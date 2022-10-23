@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <dirent.h>
 
 int file_size(char* file) {
     int size;
@@ -26,7 +27,7 @@ int file_size(char* file) {
 
 char (*fullpath(char *file1, char *file2)) {
     char fullstr[1000];
-    char (*outp)[1000];
+    char (*outp);
 
     sprintf(fullstr, "%s/%s", file1, file2);
     printf("this: %s", fullstr);
@@ -34,5 +35,16 @@ char (*fullpath(char *file1, char *file2)) {
     outp = &fullstr;
 
     return outp;
+}
+
+int is_dir(char *folder) {
+    DIR *dr;
+
+    dr = opendir(folder);
+    if(dr != NULL) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
 
