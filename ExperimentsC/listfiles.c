@@ -1,16 +1,35 @@
 #include <stdio.h>
 #include <conio.h>
 #include <dirent.h>
+#include <string.h>
+#include <stdlib.h>
+
+#include "mymodule.h"
 
 
 int main() {
 
     DIR *dr;
     struct dirent *d;
-    char folder_name[1];
+    char *folder_name;
+    int size;
+
+    /*char name[] = "love";
+    char two[] = "..";
+    /*strcat(two, "love");
+
+    printf("%s", two);
+    sprintf(name, "this %s and %s", two, two);
+    printf(name);
+
+    printf("size is %d", strlen(name));
+
+    size = file_size("ExperimentsC.cbp");
+
+    printf("Print size is: %d", size);*/
 
     printf("Which folder would you like to scan?: ");
-    scanf("%s", &folder_name);
+    scanf("%s", folder_name);
 
     dr = opendir(folder_name);
 
@@ -29,3 +48,6 @@ int main() {
 
     return 0;
 }
+
+
+
