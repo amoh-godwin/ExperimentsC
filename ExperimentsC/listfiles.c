@@ -26,11 +26,10 @@ int main() {
 
     printf("Print size is: %d", size);*/
 
-    ff = fullpath("love", "always");
-    printf("success is: %s \n", ff);
+
 
     printf("Which folder would you like to scan?: \n");
-    scanf("%s", &folder_name);
+    scanf("%s", folder_name);
 
     printf("done\n");
 
@@ -38,14 +37,17 @@ int main() {
 
     if (dr != NULL) {
         for (d=readdir(dr); d != NULL; d=readdir(dr)) {
-            printf("%s ", d->d_name);
-            printf("%d ", d->d_ino);
-            printf("%d ", d->d_namlen);
-            printf("rec: %d \n", d->d_reclen);
+            /*printf("%s ", d->d_name);
+            printf("ino: %d\n", d->d_ino);
+            printf("len: %d \n", d->d_namlen);
+            printf("rec: %d \n", d->d_reclen);*/
         } closedir(dr);
     }
     else
         printf("Something went wrong");
+
+    ff = fullpath("love", "always");
+    printf("success is: %s \n", ff);
     getch();
 
 
