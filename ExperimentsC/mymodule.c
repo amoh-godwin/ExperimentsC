@@ -93,7 +93,7 @@ int get_size(char *foldername) {
 
                 if (not_dir(newfullname) < 1) {
                     total_size += file_size(newfullname);
-                    printf("Total size here: %d for file\n", file_size(newfullname));
+                    printf("Total size here: %d for file\n", file_size("./testfolder/new%202.txt"));
                 } else {
                     get_size(newfullname);
                 }
