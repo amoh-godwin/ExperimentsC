@@ -65,6 +65,7 @@ int not_dir(char *folder) {
 
 int get_size(char *foldername) {
     const char* fullname;
+    char *newfullname = malloc(1000);
     DIR *dr;
     struct dirent *d;
 
@@ -82,8 +83,10 @@ int get_size(char *foldername) {
 
             if (dotndot > 1) {
 
+
+
                 fullname = fullpath(foldername, d->d_name);
-                char * newfullname = malloc(sizeof fullname);
+                printf("fullname: %s\n", fullname);
                 strcpy(newfullname, fullname);
 
                 printf("Scanned: %s d_nme: %d\n", newfullname, 0);
@@ -94,15 +97,15 @@ int get_size(char *foldername) {
                 } else {
                     get_size(newfullname);
                 }
-                free(fullname);
-                free(newfullname);
-                fullname = NULL;
-                newfullname = NULL;
             }
         } closedir(dr);
     }
     else
         printf("Something went wrong\n");
+    free(fullname);
+    free(newfullname);
+    fullname = NULL;
+    newfullname = NULL;
 
     return total_size;
 }
