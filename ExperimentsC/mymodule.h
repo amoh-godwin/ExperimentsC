@@ -3,9 +3,9 @@
 
 int file_size(char* file);
 
-char (*fullpath(char* file1, char* file2));
+const char* fullpath(char* file1, char* file2);
 
-int is_dir(char *folder);
+int not_dir(char *folder);
 
 int get_size(char *foldername);
 
