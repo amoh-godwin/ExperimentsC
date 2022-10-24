@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1666567626 source:d:\github\experimentsc\experimentsc\listfiles.c
+1666594958 source:d:\github\experimentsc\experimentsc\listfiles.c
 	<stdio.h>
 	<conio.h>
 	<dirent.h>
@@ -7,9 +7,11 @@
 	<stdlib.h>
 	"mymodule.h"
 
-1666567574 d:\github\experimentsc\experimentsc\mymodule.h
+1666628360 d:\github\experimentsc\experimentsc\mymodule.h
 
-1666566505 source:d:\github\experimentsc\experimentsc\mymodule.c
+1666633333 source:d:\github\experimentsc\experimentsc\mymodule.c
 	<stdio.h>
 	<stdlib.h>
+	<dirent.h>
+	<math.h>
 
