@@ -9,10 +9,8 @@
 
 int main() {
 
-    DIR *dr;
-    struct dirent *d;
-    char *folder_name;
-    char *ff;
+    char folder_name[1000];
+    int size;
 
     /*strcat(two, "love");
 
@@ -27,27 +25,17 @@ int main() {
     printf("Print size is: %d", size);*/
 
 
-
     printf("Which folder would you like to scan?: \n");
-    scanf("%s", folder_name);
+    scanf("%s", &folder_name);
+
+    printf("This is the folder: %s\n", folder_name);
 
     printf("done\n");
 
-    dr = opendir(folder_name);
+    size = get_size(folder_name);
 
-    if (dr != NULL) {
-        for (d=readdir(dr); d != NULL; d=readdir(dr)) {
-            /*printf("%s ", d->d_name);
-            printf("ino: %d\n", d->d_ino);
-            printf("len: %d \n", d->d_namlen);
-            printf("rec: %d \n", d->d_reclen);*/
-        } closedir(dr);
-    }
-    else
-        printf("Something went wrong");
+    printf("Total size of folder %s is: %d\n", folder_name, size);
 
-    ff = fullpath("love", "always");
-    printf("success is: %s \n", ff);
     getch();
 
 
