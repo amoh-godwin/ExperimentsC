@@ -94,6 +94,10 @@ int get_size(char *foldername) {
                 } else {
                     get_size(newfullname);
                 }
+                free(fullname);
+                free(newfullname);
+                fullname = NULL;
+                newfullname = NULL;
             }
         } closedir(dr);
     }
