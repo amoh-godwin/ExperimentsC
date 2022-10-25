@@ -110,3 +110,15 @@ int get_size(char *foldername) {
     return total_size;
 }
 
+
+const char* replace_spaces(char* main_str) {
+
+    const char* final_str = malloc(1024);
+    char* part_str = malloc(1024);
+    int spaces[256];
+
+    free(final_str);
+    free(part_str);
+
+}
+
