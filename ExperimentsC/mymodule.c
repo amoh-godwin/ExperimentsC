@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <string.h>
 
 
 int total_size = 0;
@@ -8,13 +9,35 @@ int total_size = 0;
 int file_size(char* file) {
     int size;
     int ssize;
+    char c_main_str[sizeof(file) * 10];
+    char* final_str = malloc(2024);
     FILE* fh;
 
     printf("Success\n");
 
-    fh = fopen(file, "rb");
+    memcpy_s(c_main_str, sizeof(file) * 10, file, strlen(file));
+    printf("c main str:  %s\n", c_main_str);
 
-    printf("Success for file: %s\n", file);
+    char* token = strtok(c_main_str, "");
+    printf("token here: %s file here: %s \n", token, c_main_str);
+    snprintf(final_str, 1, "%s", "");
+    while(token) {
+        printf("real token %s \n", token);
+        if(strcmp(final_str, "") == 0) {
+            snprintf(final_str, 2024, "%s", token);
+            token = NULL;
+        }
+        else {
+            snprintf(final_str, 2024, "%s%%20%s", final_str, token);
+            token = NULL;
+        }
+    }
+
+
+    fh = fopen(final_str, "rb");
+
+    printf("Success for file: %s\n", final_str);
+    free(final_str);
 
     printf("Not null verify: %d", fh != NULL);
 
@@ -93,7 +116,7 @@ int get_size(char *foldername) {
 
                 if (not_dir(newfullname) < 1) {
                     total_size += file_size(newfullname);
-                    printf("Total size here: %d for file\n", file_size("./testfolder/new%202.txt"));
+                    printf("Total size here: %d for file\n", file_size(newfullname));
                 } else {
                     get_size(newfullname);
                 }
@@ -102,7 +125,7 @@ int get_size(char *foldername) {
     }
     else
         printf("Something went wrong\n");
-    free(fullname);
+    //free(fullname);
     free(newfullname);
     fullname = NULL;
     newfullname = NULL;
@@ -111,14 +134,29 @@ int get_size(char *foldername) {
 }
 
 
-const char* replace_spaces(char* main_str) {
+char* replace_spaces(int a) {
 
-    const char* final_str = malloc(1024);
-    char* part_str = malloc(1024);
-    int spaces[256];
+    char* final_str;// = malloc(1024);
+    //char c_main_str[1024];
 
-    free(final_str);
-    free(part_str);
+    //memcpy_s(c_main_str, 1024, main_str, strlen(main_str));
+
+    /*char* token = strtok(c_main_str, " ");
+    printf("token here: %s \n", token);
+    snprintf(final_str, 1, "%s", "");
+    while(token) {
+        if(strcmp(final_str, "") == 0) {
+            snprintf(final_str, 1000, "%s", token);
+            token = NULL;
+        }
+        else {
+            snprintf(final_str, 1000, "%s%%20%s", final_str, token);
+            puts(token);
+            token = NULL;
+        }
+    }*/
+
+    return final_str;
 
 }
 
