@@ -7,12 +7,13 @@
 	<stdlib.h>
 	"mymodule.h"
 
-1666654509 d:\github\experimentsc\experimentsc\mymodule.h
+1666734495 d:\github\experimentsc\experimentsc\mymodule.h
 
-1666651025 source:d:\github\experimentsc\experimentsc\mymodule.c
+1666736602 source:d:\github\experimentsc\experimentsc\mymodule.c
 	<stdio.h>
 	<stdlib.h>
 	<dirent.h>
+	<string.h>
 
 1666651326 source:d:\github\experimentsc\experimentsc\testmodule.c
 	<stdio.h>
